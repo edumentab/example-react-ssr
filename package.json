@@ -1,0 +1,24 @@
+{
+  "name": "edument-react-full-demo",
+  "author": "david.waller@edument.se",
+  "version": "1.0.0",
+  "scripts": {
+    "serve": "webpack-dev-server --config ./webpack.play.js",
+    "play": "npx webpack --config ./webpack.play.js && node ./public/assets/play"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
+}
