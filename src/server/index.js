@@ -17,13 +17,13 @@ server.use(function (req, res, next) {
 
 server.use('/assets', express.static(path.join(__dirname + '/../../public/assets')));
 
-server.get('/lego', (req, res) => {
+server.get('/themes', (req, res) => {
   console.log('prefilling theme list for path', req.url);
   return rebrickable.getThemesByParent(186)
-    .then(result => res.send(renderApplication(req.url, {...defaultState, themeList: result})))
+    .then(result => res.send(renderApplication(req.url, {...defaultState, themes: {data: result.data, status: 'fetched'}})))
     .catch(e => {
       console.log('ERROR :/', e);
-      res.send(renderApplication(req.url, {preloaded: e}));  
+      res.send(renderApplication(req.url, {...defaultState, themes: e}));
     });
 });
 

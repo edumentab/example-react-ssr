@@ -1,3 +1,4 @@
 import themes from './themes';
+import setlists from './setlists';
 
-export default { themes };
+export default { themes, setlists };

@@ -1,5 +1,5 @@
 export default function getThemesByParent(parentId) {
   return this.getAllThemes()
-    .then(answer => ({ data: answer.data.filter(t => t.parent_id === parentId) }))
-    .catch(e => Promise.reject({ error: e }));
+    .then(answer => ({ data: Object.values(answer.data).reduce((acc, t) => t.parent_id === parentId ? {...acc, [t.id]: t} : acc, {}) }))
+    .catch(e => Promise.reject({ error: e }))
 }

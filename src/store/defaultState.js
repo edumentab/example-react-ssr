@@ -2,7 +2,7 @@ export default {
   themes: {
     status: 'initial',
     error: null,
-    data: []
+    data: {}
   },
-  sets: {}
+  setlists: {}
 };
