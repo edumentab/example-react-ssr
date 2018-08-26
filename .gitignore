@@ -1,4 +1,4 @@
 node_modules
 .DS_Store
-public/assets
-src/express/server.bundle.js
+public/assets/client.bundle.js
+public/index.html

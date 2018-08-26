@@ -3,12 +3,13 @@
   "author": "david.waller@edument.se",
   "version": "1.0.0",
   "scripts": {
-    "buildClient": "./node_modules/.bin/webpack --config ./webpack.client.js",
-    "buildServer": "./node_modules/.bin/webpack --config ./webpack.server.js",
+    "bundleClient": "webpack",
+    "writeDocument": "node ./src/document/writeFile",
     "lint": "eslint src",
-    "start": "node ./src/express"
+    "startServer": "babel-node ./src/server"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-class-properties": "^6.24.1",

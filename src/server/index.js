@@ -4,12 +4,12 @@ const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const path = require('path');
 
-// React App
-const bundledCode = require('./server.bundle.js').default;
+import ServerAppShell from './shell';
+import rebrickable from '../services/rebrickable';
 
 
-const ServerApp = React.createFactory(bundledCode.ServerAppShell);
-const template = require('./template');
+const ServerApp = React.createFactory(ServerAppShell);
+const template = require('../document/template');
 
 // Helper function to get the markup from React, inject the initial state, and
 // send the server-side markup to the client
@@ -22,8 +22,13 @@ app.get('/favicon.ico', (req, res) => res.sendStatus(204));
 
 app.use('/assets', express.static(path.join(__dirname, '../../public/assets')));
 
+app.use(function (req, res, next) {
+  console.log('Handling request for', req.url);
+  next();
+});
+
 app.get('/preloaded', (req, res) => {
-  return bundledCode.rebrickable.getSetsForTheme(199)
+  return rebrickable.getSetsForTheme(199)
     .then(sets => res.send(renderApplication(req.url, {preloaded: sets})))
     .catch(e => {
       console.log('ERROR :/', e);
@@ -32,7 +37,6 @@ app.get('/preloaded', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  console.log('serving', req.url);
   res.send(renderApplication(req.url, {foo: 'BAR'}));
 });
 
