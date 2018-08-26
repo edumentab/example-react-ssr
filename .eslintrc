@@ -1,0 +1,26 @@
+{
+  "settings": {
+    "react": {
+      "version": "16.4.2"
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "Promise": true
+  },
+  "plugins": ["promise", "react"],
+  "extends": ["eslint:recommended", "plugin:promise/recommended", "plugin:react/recommended"],
+  "rules": {
+    "no-console": 0
+  }
+}
