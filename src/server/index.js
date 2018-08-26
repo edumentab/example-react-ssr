@@ -4,6 +4,8 @@ import express from 'express';
 import rebrickable from '../services/rebrickable';
 import renderApplication from './renderApp';
 
+import defaultState from '../store/defaultState';
+
 const server = express();
 
 server.get('/favicon.ico', (req, res) => res.sendStatus(204));
@@ -15,9 +17,10 @@ server.use(function (req, res, next) {
 
 server.use('/assets', express.static(path.join(__dirname + '/../../public/assets')));
 
-server.get('/preloaded', (req, res) => {
-  return rebrickable.getSetsForTheme(199)
-    .then(result => res.send(renderApplication(req.url, {preloaded: result.data})))
+server.get('/lego', (req, res) => {
+  console.log('prefilling theme list for path', req.url);
+  return rebrickable.getThemesByParent(186)
+    .then(result => res.send(renderApplication(req.url, {...defaultState, themeList: result})))
     .catch(e => {
       console.log('ERROR :/', e);
       res.send(renderApplication(req.url, {preloaded: e}));  
@@ -25,7 +28,7 @@ server.get('/preloaded', (req, res) => {
 });
 
 server.get('*', (req, res) => {
-  res.send(renderApplication(req.url, {foo: 'BAR'}));
+  res.send(renderApplication(req.url, defaultState));
 });
 
 server.listen(8888);

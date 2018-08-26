@@ -2,7 +2,8 @@ const template = opts => `
   <!DOCTYPE html>
   <html>
     <head>
-      <title>Lego Castle</title>
+      <title>Lego Castle!</title>
+      <link rel="icon" href="data:;base64,iVBORw0KGgo=">
       <link rel="stylesheet" href="/assets/main.css">
     </head>
     <body>
