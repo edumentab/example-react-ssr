@@ -17,7 +17,7 @@ server.use('/assets', express.static(path.join(__dirname + '/../../public/assets
 
 server.get('/preloaded', (req, res) => {
   return rebrickable.getSetsForTheme(199)
-    .then(sets => res.send(renderApplication(req.url, {preloaded: sets})))
+    .then(result => res.send(renderApplication(req.url, {preloaded: result.data})))
     .catch(e => {
       console.log('ERROR :/', e);
       res.send(renderApplication(req.url, {preloaded: e}));  
