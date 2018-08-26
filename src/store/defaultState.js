@@ -1,7 +1,8 @@
 export default {
-  themeList: {
+  themes: {
     status: 'initial',
     error: null,
     data: []
-  }
+  },
+  sets: {}
 };

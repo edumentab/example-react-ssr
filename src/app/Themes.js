@@ -2,11 +2,16 @@ import React from 'react';
 
 export default class Themes extends React.Component {
   render() {
-    const { status, data } = this.props;
+    const { status, data, error, loadThemes } = this.props;
     return (
       <React.Fragment>
         <h4>The themes we have</h4>
-        { status === 'initial' ? 'nothing!' : status === 'loading' ? '...loading...' : status === 'error' ? 'OH NO :/' : (
+        { status !== 'fetched' ? (
+          <React.Fragment>
+            <button onClick={loadThemes} disabled={status === 'loading'}>{status === 'initial' ?  'Ladda' : '...loading...'}</button>
+            { status === 'error' && <span>Oh no!! {error}</span>}
+          </React.Fragment>
+        ) : (
           <ul>
             {data.map( t => <li key={t.name}>{t.name}</li> )}
           </ul>
