@@ -3,13 +3,14 @@
   "author": "david.waller@edument.se",
   "version": "1.0.0",
   "scripts": {
-    "bundleClient": "webpack",
+    "bundleClient": "webpack --config ./webpack.client.js",
+    "bundleServer": "webpack --config ./webpack.server.js",
     "writeDocument": "node ./src/document/writeFile",
     "lint": "eslint src",
-    "startServer": "babel-node ./src/server"
+    "startServer": "node ./src/server/server.bundle.js",
+    "startClientServer": "webpack-dev-server --config ./webpack.client.js"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -17,12 +18,18 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
     "eslint": "^5.4.0",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-react": "^7.11.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "isomorphic-style-loader": "^4.0.0",
+    "mini-css-extract-plugin": "^0.4.2",
+    "style-loader": "^0.22.1",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "webpack-dev-server": "^3.1.5",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "express": "^4.16.3",

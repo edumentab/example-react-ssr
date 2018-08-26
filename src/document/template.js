@@ -3,6 +3,7 @@ const template = opts => `
   <html>
     <head>
       <title>Lego Castle</title>
+      <link rel="stylesheet" href="assets/main.css">
     </head>
     <body>
       <div id="root">${opts.body || ''}</div>
@@ -10,7 +11,7 @@ const template = opts => `
     <script>
       window.__initialState = ${opts.initialState || '{}'};
     </script>
-    <script src='/assets/client.bundle.js'></script>
+    <script src='assets/client.bundle.js'></script>
   </html>
 `;
 

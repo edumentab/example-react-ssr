@@ -8,13 +8,6 @@ const server = express();
 
 server.get('/favicon.ico', (req, res) => res.sendStatus(204));
 
-server.use('/assets', express.static(path.join(__dirname, '../../public/assets')));
-
-server.use(function (req, res, next) {
-  console.log('Handling request for', req.url);
-  next();
-});
-
 server.get('/preloaded', (req, res) => {
   return rebrickable.getSetsForTheme(199)
     .then(sets => res.send(renderApplication(req.url, {preloaded: sets})))
@@ -24,10 +17,13 @@ server.get('/preloaded', (req, res) => {
     });
 });
 
-server.get('*', (req, res) => {
+server.get(/^\/(?!assets)/i, (req, res) => {
+  console.log('non!', req.url);
   res.send(renderApplication(req.url, {foo: 'BAR'}));
 });
 
+server.use('/assets', express.static(__dirname + '/../../public/assets'));
+
 server.listen(8888);
 
-console.log("Backend server listening at", 8888);
+console.log("Backend server v2 listening at", 8888);
