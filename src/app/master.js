@@ -14,7 +14,7 @@ const Master = () => (
     <nav>
       <ul>
         <li><NavLink exact activeClassName={styles.active} to='/'>Home</NavLink></li>
-        <li><NavLink exact activeClassName={styles.active} to='/themes'>LEGO</NavLink></li>
+        <li><NavLink activeClassName={styles.active} to='/themes'>LEGO</NavLink></li>
         <li><NavLink exact activeClassName={styles.active} to='/about'>About</NavLink></li>
       </ul>
     </nav>
