@@ -42,7 +42,7 @@ app.get('*', (req, res) => {
 
 app.listen(8888);
 
-console.log("Backend server starting!");
+console.log("Backend server listening at", 8888);
 
 
 /*
