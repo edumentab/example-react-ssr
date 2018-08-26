@@ -3,9 +3,10 @@
   "author": "david.waller@edument.se",
   "version": "1.0.0",
   "scripts": {
-    "serve": "webpack-dev-server --config ./webpack.play.js",
-    "play": "npx webpack --config ./webpack.play.js && node ./public/assets/play",
-    "lint": "eslint src"
+    "buildClient": "./node_modules/.bin/webpack --config ./webpack.client.js",
+    "buildServer": "./node_modules/.bin/webpack --config ./webpack.server.js",
+    "lint": "eslint src",
+    "start": "node ./src/express"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -23,7 +24,13 @@
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
+    "express": "^4.16.3",
     "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
     "xmlhttprequest": "^1.8.0"
   }
 }

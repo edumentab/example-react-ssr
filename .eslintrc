@@ -21,6 +21,7 @@
   "plugins": ["promise", "react"],
   "extends": ["eslint:recommended", "plugin:promise/recommended", "plugin:react/recommended"],
   "rules": {
-    "no-console": 0
+    "no-console": 0,
+    "react/prop-types": 0
   }
 }

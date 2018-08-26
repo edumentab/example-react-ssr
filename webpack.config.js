@@ -1,4 +1,4 @@
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   resolve: {
@@ -11,14 +11,8 @@ module.exports = {
       loader: 'babel-loader'
     }]
   },
-  plugins: [
+  plugins: [
     //new CleanWebpackPlugin(['public/assets'])
   ],
   mode: 'development',
-  devServer: {
-    port: 3000,
-    contentBase: './public',
-    compress: true,
-    historyApiFallback: true
-  }
 };

@@ -3,9 +3,10 @@ const path = require('path');
 
 module.exports = Object.assign({}, {
   target: 'node',
-  entry: './src/play',
+  entry: './src/bundles/server/index.js',
   output: {
-    filename: 'play.js',
-    path: path.resolve(__dirname, './public/assets')
+    filename: 'server.bundle.js',
+    path: path.resolve(__dirname, './src/express'),
+    libraryTarget: 'commonjs2',
   }
 }, baseConfig);
