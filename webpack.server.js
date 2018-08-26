@@ -5,6 +5,9 @@ const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   target: 'node',
+  node: {
+    __dirname: false
+  },
   externals: [nodeExternals()],
   entry: './src/server/index.js',
   resolve: {
@@ -13,7 +16,7 @@ module.exports = {
   mode: 'development',
   output: {
     filename: 'server.bundle.js',
-    path: path.resolve(__dirname, './src/server'),
+    path: path.join(__dirname, './src/server'),
     libraryTarget: 'commonjs2'
   },
   plugins: [

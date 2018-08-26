@@ -8,6 +8,13 @@ const server = express();
 
 server.get('/favicon.ico', (req, res) => res.sendStatus(204));
 
+server.use(function (req, res, next) {
+  console.log('Received request', req.url);
+  next();
+});
+
+server.use('/assets', express.static(path.join(__dirname + '/../../public/assets')));
+
 server.get('/preloaded', (req, res) => {
   return rebrickable.getSetsForTheme(199)
     .then(sets => res.send(renderApplication(req.url, {preloaded: sets})))
@@ -17,12 +24,9 @@ server.get('/preloaded', (req, res) => {
     });
 });
 
-server.get(/^\/(?!assets)/i, (req, res) => {
-  console.log('non!', req.url);
+server.get('*', (req, res) => {
   res.send(renderApplication(req.url, {foo: 'BAR'}));
 });
-
-server.use('/assets', express.static(__dirname + '/../../public/assets'));
 
 server.listen(8888);
 
