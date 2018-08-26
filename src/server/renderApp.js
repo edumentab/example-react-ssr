@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOMServer from 'react-dom-server';
+import ReactDOMServer from 'react-dom/server';
 
 import ServerAppShell from './shell';
 import template from '../document/template';
