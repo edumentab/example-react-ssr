@@ -1,5 +1,5 @@
 // import getThemesByParent from './services/getThemesByParent';
-import getSetsForTheme from './services/getSetsForTheme';
+import getSetsForTheme from './services/rebrickable/getSetsForTheme';
 
 console.log('Getting castle themes...');
 
