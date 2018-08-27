@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route, NavLink } from 'react-router-dom';
 
-import Home from './home';
-import Error404 from './404';
-import About from './about';
-import ThemeSectionContainer from './ThemeSectionContainer';
-import SetContainer from './SetContainer';
+import Home from '../home/Home';
+import Error404 from '../404/404';
+import About from '../about/About';
+import ThemeSectionContainer from '../theme/ThemeSectionContainer';
+import SetContainer from '../set/SetContainer';
 
 import styles from './master.css';
 

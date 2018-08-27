@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 
 import ThemeSection from './ThemeSection';
-import actions from '../actions';
+import actions from '../../actions';
 
 const mapStateToProps = (appState) => ({
   themes: appState.themes,

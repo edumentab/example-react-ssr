@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 
 import SetInfo from './SetInfo';
-import actions from '../actions';
+import actions from '../../actions';
 
 const mapStateToProps = (appState, ownProps) => ({
   set: appState.sets[ownProps.match.params.setId] || { status: 'initial' }
