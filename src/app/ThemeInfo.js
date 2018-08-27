@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 export default class ThemeInfo extends React.Component {
   componentDidMount() {
     const { theme, setlist, loadSetlist,  } = this.props;
@@ -22,7 +24,7 @@ export default class ThemeInfo extends React.Component {
       <React.Fragment>
         <h4>Sets in the theme {theme.name}</h4>
         <ul>
-          {Object.values(setlist.data).map( s => <li key={s.name}>{s.name}</li> )}
+          {Object.values(setlist.data).map( s => <li key={s.set_num}><Link to={`/sets/${s.set_num}`}>{s.name}</Link></li> )}
         </ul>
       </React.Fragment>
     );

@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 
-import Themelist from './ThemeSection';
+import ThemeSection from './ThemeSection';
 import actions from '../actions';
 
 const mapStateToProps = (appState) => ({
@@ -13,4 +13,4 @@ const mapDispatchToProps = (dispatch) => ({
   loadSetlistForTheme: (themeId) => dispatch(actions.setlists.loadSetlistForTheme(themeId))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Themelist);
+export default connect(mapStateToProps, mapDispatchToProps)(ThemeSection);

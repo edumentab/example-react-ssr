@@ -32,7 +32,7 @@ module.exports = {
     },{
       test: /\.css$/,
       use: [
-        { loader: MiniCssExtractPlugin.loader },
+        'raw-loader',
         {
           loader: 'css-loader',
           query: {

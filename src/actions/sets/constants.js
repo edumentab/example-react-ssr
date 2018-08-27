@@ -1,0 +1,5 @@
+export default {
+  GET_SET_INIT: 'GET_SET_INIT',
+  GET_SET_ERROR: 'GET_SET_ERROR',
+  GET_SET_SUCCESS: 'GET_SET_SUCCESS',
+}

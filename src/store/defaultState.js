@@ -4,5 +4,6 @@ export default {
     error: null,
     data: {}
   },
-  setlists: {}
+  setlists: {},
+  sets: {}
 };
