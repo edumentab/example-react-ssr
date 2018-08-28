@@ -1,6 +1,3 @@
 node_modules
 .DS_Store
-public/assets/client.bundle.js
-public/index.html
-src/server/server.bundle.js
-src/server/server.bundle.css
+dist

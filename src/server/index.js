@@ -15,7 +15,7 @@ server.use(function (req, res, next) {
   next();
 });
 
-server.use('/assets', express.static(path.join(__dirname + '/../../public/assets')));
+server.use('/assets', express.static(path.join(__dirname + '/www/assets')));
 
 server.get('/themes', (req, res) => {
   console.log('prefilling theme list for path', req.url);

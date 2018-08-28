@@ -7,8 +7,8 @@
     "bundleServer": "webpack --config ./webpack.server.js",
     "writeDocument": "node ./src/document/writeFile",
     "lint": "eslint src",
-    "startServer": "node ./src/server/server.bundle.js",
-    "startClientServer": "webpack-dev-server --config ./webpack.client.js"
+    "startServer": "node ./dist/server.bundle.js",
+    "startClientServer": "npm run writeDocument && webpack-dev-server --config ./webpack.client.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -24,6 +24,7 @@
     "eslint-plugin-react": "^7.11.1",
     "mini-css-extract-plugin": "^0.4.2",
     "raw-loader": "^0.5.1",
+    "style-loader": "^0.22.1",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",

@@ -1,3 +1,2 @@
 node_modules
-public/assets/client.bundle.js
-src/server/server.bundle.js
+dist

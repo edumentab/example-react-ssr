@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/client/index.js',
   output: {
     filename: 'client.bundle.js',
-    path: path.resolve(__dirname, './public/assets')
+    path: path.resolve(__dirname, './dist/www/assets')
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -17,7 +17,8 @@ module.exports = {
   ],
   devServer: {
     port: 3000,
-    contentBase: './public',
+    contentBase: './dist/www',
+    publicPath: '/assets/',
     compress: true,
     historyApiFallback: true
   },
@@ -29,6 +30,7 @@ module.exports = {
     },{
       test: /\.css$/,
       use: [
+        // 'style-loader',  
         { loader: MiniCssExtractPlugin.loader },
         {
           loader: 'css-loader',

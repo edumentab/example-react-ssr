@@ -1,6 +1,5 @@
 const path = require('path');
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
@@ -16,14 +15,9 @@ module.exports = {
   mode: 'development',
   output: {
     filename: 'server.bundle.js',
-    path: path.join(__dirname, './src/server'),
+    path: path.join(__dirname, './dist'),
     libraryTarget: 'commonjs2'
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "server.bundle.css",
-    })
-  ],
   module: {
     rules: [{
       test: /\.(js|jsx)$/,
