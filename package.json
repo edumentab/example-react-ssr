@@ -8,6 +8,7 @@
     "writeDocument": "node ./src/document/writeFile",
     "lint": "eslint src",
     "startServer": "node ./dist/server.bundle.js",
+    "kickServer": "npm run bundleClient && npm run bundleServer && npm run startServer",
     "startClientServer": "npm run writeDocument && webpack-dev-server --config ./webpack.client.js"
   },
   "devDependencies": {

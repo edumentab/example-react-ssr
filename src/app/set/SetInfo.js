@@ -15,6 +15,9 @@ export default class SetInfo extends React.Component {
     if (set.status === 'error') {
       return <p>Ånej! Gick inte ladda :(</p>;
     }
+    if (!set.data) {
+      return <p>Okänt setnummer!</p>;
+    }
     return (
       <React.Fragment>
         <h4>Set {set.data.set_num.split('-')[0]} {set.data.name}</h4>
