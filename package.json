@@ -3,12 +3,12 @@
   "author": "david.waller@edument.se",
   "version": "1.0.0",
   "scripts": {
-    "bundleClient": "webpack --config ./webpack.client.js",
-    "bundleServer": "webpack --config ./webpack.server.js",
+    "buildClient": "npm run writeDocument && webpack --config ./webpack.client.js",
+    "buildServer": "webpack --config ./webpack.server.js",
     "writeDocument": "node ./src/document/writeFile",
     "lint": "eslint src",
     "startServer": "node ./dist/server.bundle.js",
-    "kickServer": "npm run bundleClient && npm run bundleServer && npm run startServer",
+    "kickServer": "npm run buildClient && npm run buildServer && npm run startServer",
     "startClientServer": "npm run writeDocument && webpack-dev-server --config ./webpack.client.js"
   },
   "devDependencies": {

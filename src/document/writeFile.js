@@ -4,6 +4,7 @@ const path = require('path');
 const template = require('./template');
 
 try {
+  fs.mkdirSync(path.join(__dirname,'../../dist/'));
   fs.mkdirSync(path.join(__dirname,'../../dist/www'));
   fs.mkdirSync(path.join(__dirname,'../../dist/www/assets'));
 } catch (e) {
