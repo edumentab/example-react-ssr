@@ -8,7 +8,7 @@ export default class ServerAppShell extends React.Component {
   render() {
     const store = initiateStore(this.props.initialState);
     return (
-      <StaticRouter location={this.props.url} context={this.props.context}>
+      <StaticRouter location={this.props.url}>
         <Provider store={store}>
           <App />
         </Provider>
